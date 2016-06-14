@@ -20,7 +20,7 @@ module.exports = function() {
             directory: './bower_components/',
             ignorePath: '../..'
         },
-
+        browserReloadDelay: 1000,
         defaultPOrt: 7203,
         nodeServer: './src/app.js'
     };
