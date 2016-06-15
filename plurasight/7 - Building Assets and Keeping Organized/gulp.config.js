@@ -15,9 +15,6 @@ module.exports = function() {
         ],
         client: '',
         server: './src',
-        build: './build/',
-        fonts: '.bower_components/fonts',
-        images: 'images/**/*.*',
         bower: {
             json: require('./bower.json'),
             directory: './bower_components/',

@@ -12,8 +12,6 @@ var port = process.env.PORT || config.defaultPort;
 // var gulpprint = require('gulp-print');
 // var gulpif = require('gulp-if');
 
-gulp.task('help', $.taskListing);
-
 gulp.task('vet', function () {
     log("Test log.");
     
@@ -36,29 +34,6 @@ gulp.task('styles', [ 'clean-styles' ], function () {
         //.on('error', errorLogger)
         .pipe($.autoprefixer({ browsers: [ 'last 2 version', '> 5%' ] }))
         .pipe(gulp.dest(config.temp));
-});
-
-gulp.task('fonts', [ 'clean-fonts' ], function () {
-    return gulp
-        .src(config.images)
-        .pipe($.imagemin({optimalizationLevel: 4}))
-        .pipe(gulp.dest(config.build + 'images'));
-});
-
-gulp.task('clean-fonts', function (done) {
-   var files = config.build + 'images';
-   clean(files, done);
-});
-
-gulp.task('images', [ 'clean-images' ], function () {
-    return gulp
-        .src(config.fonts)
-        .pipe(gulp.dest(config.build + 'fonts'));
-});
-
-gulp.task('clean-images', function (done) {
-   var files = config.build + 'fonts';
-   clean(files, done);
 });
 
 gulp.task('clean-styles', function (done) {
