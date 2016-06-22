@@ -99,6 +99,17 @@ gulp.task('serve-dev', ['inject'], function () {
     return serve(true);
 });
 
+gulp.task('bump', function () {
+    var msg = 'Bumbing versions';
+    var type = args.type;
+    var version = args.version;
+    var options = {};
+    if(version) {
+        options.version = version;
+        msg += ' to ' + version;
+    }
+});
+
 /////////////////////
 
 function serve(isDev) {
