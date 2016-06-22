@@ -117,6 +117,7 @@ gulp.task('bump', function () {
     return gulp
         .src(config.packages)
         .pipe($.bump(options))
+        .pipe($.print())
         .pipe(gulp.dest(config.root));
 });
 
